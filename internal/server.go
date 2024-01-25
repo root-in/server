@@ -11,6 +11,7 @@ import (
 func Run() {
 	r := gin.Default()
 	r.MaxMultipartMemory = 8 << 20
+	r.GET("/", staticHandler)
 	r.POST("/register", registerHandler)
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
