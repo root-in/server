@@ -9,10 +9,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Run(contentFS fs.FS) {
+func Run(content fs.FS) {
 	r := gin.Default()
 	r.MaxMultipartMemory = 8 << 20
-	r.StaticFS("/", http.FS(contentFS))
+	r.StaticFS("/", http.FS(content))
 	r.POST("/register", registerHandler)
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
@@ -48,7 +48,10 @@ func registerHandler(c *gin.Context) {
 	}
 
 	// Upload the file to specific dst.
-	c.SaveUploadedFile(file, "/tmp/file.Filename")
+	// content := io.NopCloser(strings.NewReader("Hello, world!"))
+	// if err := storeGCS(content, "rootin-web", "file"); err != nil {
+	// 	c.AbortWithError(http.StatusBadRequest, fmt.Errorf("failed to store file with %v", err))
+	// }
 
 	fmt.Printf("name: %s; surname: %s; email: %s; phone: %s; file: %s", name, surname, email, phone, file.Filename)
 	c.String(http.StatusOK, fmt.Sprintf("'%s' uploaded!", file.Filename))
