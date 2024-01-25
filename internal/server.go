@@ -3,15 +3,16 @@ package internal
 import (
 	"errors"
 	"fmt"
+	"io/fs"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-func Run() {
+func Run(contentFS fs.FS) {
 	r := gin.Default()
 	r.MaxMultipartMemory = 8 << 20
-	r.GET("/", staticHandler)
+	r.StaticFS("/", http.FS(contentFS))
 	r.POST("/register", registerHandler)
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
