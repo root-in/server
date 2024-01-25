@@ -1,0 +1,31 @@
+<html>
+<body>
+<form action="http://localhost:8080/register" method="post" enctype="multipart/form-data">
+    <!-- upload of a single file -->
+    <p>
+        <label>שם פרטי: </label><br/>
+        <input type="text" name="name"/>
+    </p>
+    <p>
+        <label>שם משפחה: </label><br/>
+        <input type="text" name="surname"/>
+    </p>
+    <p>
+        <label>אימייל: </label><br/>
+        <input type="text" name="email"/>
+    </p>
+    <p>
+        <label>טלפון: </label><br/>
+        <input type="text" name="phone"/>
+    </p>
+    <p>
+        <label>אישור מילואים (טופס 3010): </label><br/>
+        <input type="file" name="file"/>
+    </p>
+
+    <p>
+        <input type="submit"/>
+    </p>
+</form>
+</body>
+</html>
