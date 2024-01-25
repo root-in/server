@@ -1,31 +1,103 @@
-<html>
-<body>
-<form action="https://server-uhrp6x47qq-zf.a.run.app/register" method="post" enctype="multipart/form-data">
-    <!-- upload of a single file -->
-    <p>
-        <label>שם פרטי: </label><br/>
-        <input type="text" name="name"/>
-    </p>
-    <p>
-        <label>שם משפחה: </label><br/>
-        <input type="text" name="surname"/>
-    </p>
-    <p>
-        <label>אימייל: </label><br/>
-        <input type="text" name="email"/>
-    </p>
-    <p>
-        <label>טלפון: </label><br/>
-        <input type="text" name="phone"/>
-    </p>
-    <p>
-        <label>אישור מילואים (טופס 3010): </label><br/>
-        <input type="file" name="file"/>
-    </p>
+<!doctype html>
+<html lang="en">
 
-    <p>
-        <input type="submit"/>
-    </p>
-</form>
-</body>
+<head>
+    <meta charset="utf-8">
+    <title>RootIn</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <img class="" src="images/logo/rootin_logo_white.png?width=75&height=75&name=rootin_logo_white.png"
+                    alt="rootin logo" loading="lazy" width="75" height="75"
+                    srcset="images/logo/rootin_logo_white.png?width=38&height=38&name=rootin_logo_white.png 38w, images/logo/rootin_logo_white.png?width=75&height=75&name=rootin_logo_white.png 75w, images/logo/rootin_logo_white.png?width=113&height=113&name=rootin_logo_white.png 113w, images/logo/rootin_logo_white.png?width=150&height=150&name=rootin_logo_white.png 150w, images/logo/rootin_logo_white.png?width=188&height=188&name=rootin_logo_white.png 188w, images/logo/rootin_logo_white.png?width=225&height=225&name=rootin_logo_white.png 225w"
+                    sizes="(max-width: 75px) 100vw, 75px">
+            </div>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="#about-us">מי אנחנו</a></li>
+                        <li><a href="#how-it-works">איך זה עובד</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="content main">
+            <div class="section-main">
+                <img src="images/first_section.svg" width="0" loading="lazy" alt="logo_text">
+                <a id="about-us" data-hs-anchor="true"></a>
+            </div>
+
+            <div class="about-us">
+                <span class="section-title">מי אנחנו ?</span>
+
+                <div class="items">
+                    <p>RootIn הוא מיזם חברתי מקצועי, שמטרתו לסייע לכל משרת מילואים במעבר מחירום
+                        לשגרה.</p>
+                    <p>בעקבות מלחמת 'חרבות ברזל', נוכחנו לגלות את היכולת הישראלית לעבור משגרה
+                        לחירום תוך שעות ספורות. בחלוף השבועות, עלה הצורך ללוות את משרתי המילואים
+                        במעבר לשגרה ולפתח את היכולת להסתגל ולתת כלים ליצירת חוסן ובניית השגרה בצורה
+                        התואמת למציאות חייו החדשה.&nbsp;</p>
+                    <p dir="rtl">מאחורי המיזם עומדות נשות בריאות הנפש המשרתות במערכה בתור קב"ניות
+                        ונשות משא"ן אשר פגשו את הצורך בשטח והגיעו להבנה כי זה הוא צו השעה.</p>
+                    <p dir="rtl">בכדי להחזיר את המשרתים ואת החברה למציאות מתפקדת, יש צורך ביצירת
+                        פלטפורמה מתאימה ומודל טיפול ייחודי למתן מענה עבור הזקוקים לכך.</p>
+                    <p>אנחנו מאמינות ביכולת של האדם להתגבר על משברי חיים באופן טבעי, בעזרת תהליך
+                        ממוקד קצר טווח בן שישה מפגשים בגישה טיפולית ייחודית שמטרתה לסייע לך
+                        <strong>לעבד </strong>את חוויות המלחמה, <strong>לזהות </strong>את הכוחות
+                        והמשאבים שעמדו לצידו <strong>ולאמץ </strong>אותם במציאות החדשה.&nbsp;
+                    </p>
+                    <p dir="rtl">בעזרת צוות מקצועי נוכל לסייע לפרט בהתאקלמות קלה יותר, וכך באופן
+                        ישיר גם לחברה, כלכלה ולשוק העבודה לחזור למסלול מהר יותר.</p>
+                </div>
+                <a id="how-it-works" data-hs-anchor="true"></a>
+            </div>
+
+            <div class="how-it-works">
+                <span class="section-title">איך זה עובד?</span>
+
+                <div class="how-image-container" id="how-it-works">
+                    <p><img src="images/how-it-works-1.svg" width="0" loading="lazy" alt="How it works slide 1"></p>
+                    <p><img src="images/how-it-works-2.svg" width="0" loading="lazy" alt="How it works slide 2"></p>
+                    <p><img src="images/how-it-works-3.svg" width="0" loading="lazy" alt="How it works slide 3"></p>
+                    <p><img src="images/how-it-works-4.svg" width="0" loading="lazy" alt="How it works slide 4"></p>
+                </div>
+
+                <div class="how-it-works">
+                    <span class="section-title sub-title">כמה דברים חשובים לפני שמתחילים:</span>
+
+                    <ul>
+                        <li dir="rtl" style="text-align: right; line-height: 2;">
+                            <p dir="rtl" style="text-align: right; line-height: 1.5;">כלל המטפלים נבחרו
+                                בקפידה – אנשי בריאות נפש (עובדים סוציאליים שעברו הכשרה למודל ייחודי במעבר
+                                מחירום לשגרה ע"י RootIn והכשרה צבאית להתמודדות עם אתגרי הלחימה במסגרת צבאית
+                                ושירתו ב'חרבות ברזל')</p>
+                        </li>
+                        <li dir="rtl" style="text-align: right; line-height: 2;">
+                            <p dir="rtl" style="text-align: right; line-height: 1.5;">תהליך ממוקד קצר טווח
+                                בן שישה מפגשים בגישה טיפולית ייחודית לסיוע במעבר מחירום לשגרה.</p>
+                        </li>
+                        <li dir="rtl" style="line-height: 2; text-align: right;">
+                            <p dir="rtl" style="text-align: right; line-height: 1.5;">עלות כל מפגש בדאנא,
+                                לפי בחירתך ויכולתך - משמעות המילה דאנא, בשפת הפּאלִי של הבודהיזם העתיק, היא
+                                נדיבות או נתינה. זו סגולה אנושית חיונית, שיש לה חשיבות ראשונה במעלה בתרגולת
+                                הרוחנית הבודהיסטית.
+                                כיום,<span>&nbsp;</span><span>RootIn</span><span>&nbsp;</span>הינו מיזם המתבסס
+                                על תרומות. כל תרומה מאפשרת לעוד מטפלים מוכשרים לסייע לחיילים נוספים. על כן, יש
+                                מכסת מקומות משתנה למספר מטופלים.</p>
+                        </li>
+                    </ul>
+                    <a id="team" data-hs-anchor="true"></a>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
 </html>
