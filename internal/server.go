@@ -39,10 +39,12 @@ func registerHandler(c *gin.Context) {
 	link, err := storeGCS(f, bucket, user.getId())
 	if err != nil {
 		c.AbortWithError(http.StatusBadRequest, fmt.Errorf("failed to store file with %v", err))
+		return
 	}
 
 	if err := saveUser(user, link); err != nil {
 		c.AbortWithError(http.StatusBadRequest, fmt.Errorf("failed to save user with %v", err))
+		return
 	}
 
 	c.String(http.StatusOK, fmt.Sprintf("'%s' registered", user))
