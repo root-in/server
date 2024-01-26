@@ -87,3 +87,137 @@ body {
     height: auto;
     max-width: 100%;
 }
+
+.the-team {
+    width: 100%;
+    text-align: center;
+}
+
+.team-card-container {
+    position: relative;
+}
+
+.the-team-container {
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.team-card-container .team-card-image-content img {
+    max-width: 264px;
+    max-height: 350px;
+    border-radius: 15px;
+}
+
+.team-card-label-content {
+    position: absolute;
+    bottom: -40px;
+    right: 25px;
+    text-wrap: nowrap;
+    box-shadow: 0px 10px 30px 0px rgba(1, 11, 60, 6%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 100%);
+    padding: 15px 60px;
+    border-radius: 7px
+}
+
+.team-card-label-content:hover {
+    background: #8dc63f;
+}
+
+.team-card-label-content:hover .team-card-label-name,
+.team-card-label-content:hover .team-card-label-position {
+    color: #FFFFFF;
+}
+
+.team-card-label-name {
+    color: #0E1133;
+    font-weight: 700;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    text-transform: capitalize;
+}
+
+.contact-us {
+    width: 100%;
+    text-align: center;
+    margin: 100px 0;
+}
+.contact-us-container {
+    padding: 20px;
+    background-color: rgba(141, 198, 63, 51%);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.contact-field-content {
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.contact-us-description {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: start;
+    margin: 40px 0;
+}
+
+.contact-field-content.required > label::after {
+    content: "*";
+    color: rgb(255, 0, 0);
+}
+
+.contact-field-content > label {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.contact-field-content input[type=text] {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+}
+
+input[type=submit] {
+    max-width: 375px;
+    width: 100%;
+    border: 2px solid #8dc63f;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    background: #8dc63f;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+input[type=submit]:hover {
+    border: 2px solid #1239ff;
+    background: #1239ff;
+}
+
+.donations-bank {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.donation .logo-jgive {
+    width: 200px;
+    height: 47px;
+}
+
+.contact {
+    margin-top: 70px;
+}
