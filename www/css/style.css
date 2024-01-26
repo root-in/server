@@ -97,6 +97,11 @@ body {
     max-width: 100%;
 }
 
+.how-image-container img:hover {
+    transform: scale(1.2);
+
+}
+
 .the-team {
     width: 100%;
     text-align: center;
