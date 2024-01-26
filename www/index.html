@@ -157,19 +157,19 @@
                         </div>
                         <div class="contact-field-content required">
                             <label>שם משפחה</label>
-                            <div><input type="text" name="surname" /></div>
+                            <div><input type="text" name="surname" required /></div>
                         </div>
                         <div class="contact-field-content required">
                             <label>טלפון</label>
-                            <div><input type="text" name="phone" /></div>
+                            <div><input type="text" name="phone" required /></div>
                         </div>
-                        <p>
-                            <label>אישור מילואים (טופס 3010): </label><br />
-                            <input type="file" name="file" />
-                        </p>
+                        <div class="contact-field-content required">
+                            <label>אישור מילואים (טופס 3010): </label>
+                            <input type="file" name="file" required />
+                        </div>
 
                         <div class="terms contact-field-content required">
-                            <input type="checkbox" name="privacyconsent" value="true">
+                            <input type="checkbox" name="privacyconsent" value="true" required>
                             <label>הריני לאשר, כי (1) ידוע לי כי
                                 מיזם RootIn הינו מיזם התנדבותי ללא מטרות רווח וכי המיזם עשוי להתקשר גם גופים עסקיים
                                 לצורך קידום המיזם. גופים כאמור עשויים לגבות תמורה מהמיזם ו/או ממטופלים. במידה ותהיה
@@ -184,6 +184,7 @@
                         </div>
 
                         <div><input type="submit" value="שלח" /></div>
+                        <p id="submit-message">הטופס נשלח</p>
                     </form>
 
                 </div>
@@ -232,3 +233,5 @@
         <div style="height: 400px"></div>
 
 </html>
+
+<script  type="text/javascript" src="js/index.js"></script>

@@ -99,10 +99,11 @@ input {
     text-align: center;
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
     .header {
         display: none;
     }
+
     .how-image-container {
         flex-direction: column;
     }
@@ -246,6 +247,14 @@ input[type=submit]:hover {
 
 .terms {
     font-size: 14px;
+}
+
+#submit-message {
+    display: none;
+}
+
+#submit-message.show {
+    display: block;
 }
 
 .donations-bank {
