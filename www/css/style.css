@@ -5,17 +5,25 @@ html {
 
 body {
     direction: rtl;
-    background-image: url('https://rootin-il.com/hubfs/web_elemants-06-small.png') !important;
+    background-image: url('../images/background.png') !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     text-align: right;
+    margin: 0;
 }
 
 .header {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: center;
     background: #3c2415;
+}
+
+.separator {
+    border-bottom: 2px solid;
+    margin-bottom: 50px;
 }
 
 .menu {
@@ -40,6 +48,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 .content.main {
@@ -204,6 +213,7 @@ input[type=submit] {
 input[type=submit]:hover {
     border: 2px solid #1239ff;
     background: #1239ff;
+    cursor: pointer;
 }
 
 .donations-bank {
