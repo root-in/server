@@ -244,6 +244,10 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
+.terms {
+    font-size: 14px;
+}
+
 .donations-bank {
     display: flex;
     width: 100%;
