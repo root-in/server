@@ -18,43 +18,56 @@ func Run(content fs.FS) {
 }
 
 func registerHandler(c *gin.Context) {
-	var name, surname, email, phone string
-	var err error
-
-	if name, err = getField(c, "name"); err != nil {
+	user, err := getUser(c)
+	if err != nil {
 		c.AbortWithError(http.StatusBadRequest, err)
 		return
 	}
 
-	if surname, err = getField(c, "surname"); err != nil {
-		c.AbortWithError(http.StatusBadRequest, err)
-		return
-	}
-
-	if email, err = getField(c, "email"); err != nil {
-		c.AbortWithError(http.StatusBadRequest, err)
-		return
-	}
-
-	if phone, err = getField(c, "phone"); err != nil {
-		c.AbortWithError(http.StatusBadRequest, err)
-		return
-	}
-
-	file, err := c.FormFile("file")
+	fileHeader, err := c.FormFile("file")
 	if err != nil {
 		c.AbortWithError(http.StatusBadRequest, errors.New("can't read file"))
 		return
 	}
 
-	// Upload the file to specific dst.
-	// content := io.NopCloser(strings.NewReader("Hello, world!"))
-	// if err := storeGCS(content, "rootin-web", "file"); err != nil {
-	// 	c.AbortWithError(http.StatusBadRequest, fmt.Errorf("failed to store file with %v", err))
-	// }
+	f, err := fileHeader.Open()
+	if err != nil {
+		c.AbortWithError(http.StatusBadRequest, errors.New("can't open file"))
+		return
+	}
 
-	fmt.Printf("name: %s; surname: %s; email: %s; phone: %s; file: %s", name, surname, email, phone, file.Filename)
-	c.String(http.StatusOK, fmt.Sprintf("'%s' uploaded!", file.Filename))
+	if err := storeGCS(f, "rootin-web", "file"); err != nil {
+		c.AbortWithError(http.StatusBadRequest, fmt.Errorf("failed to store file with %v", err))
+	}
+
+	if err := saveUser(user); err != nil {
+		c.AbortWithError(http.StatusBadRequest, fmt.Errorf("failed to save user with %v", err))
+	}
+
+	c.String(http.StatusOK, fmt.Sprintf("'%s' uploaded!", user))
+}
+
+func getUser(c *gin.Context) (*User, error) {
+	var user User
+	var err error
+
+	if user.Name, err = getField(c, "name"); err != nil {
+		return nil, c.AbortWithError(http.StatusBadRequest, err)
+	}
+
+	if user.Surname, err = getField(c, "surname"); err != nil {
+		return nil, c.AbortWithError(http.StatusBadRequest, err)
+	}
+
+	if user.Email, err = getField(c, "email"); err != nil {
+		return nil, c.AbortWithError(http.StatusBadRequest, err)
+	}
+
+	if user.Phone, err = getField(c, "phone"); err != nil {
+		return nil, c.AbortWithError(http.StatusBadRequest, err)
+	}
+
+	return &user, nil
 }
 
 func getField(c *gin.Context, name string) (string, error) {
