@@ -36,7 +36,7 @@ func registerHandler(c *gin.Context) {
 		return
 	}
 
-	if err := storeGCS(f, "rootin-web", "file"); err != nil {
+	if err := storeGCS(f, "rootin-web", user.getId()); err != nil {
 		c.AbortWithError(http.StatusBadRequest, fmt.Errorf("failed to store file with %v", err))
 	}
 
@@ -44,7 +44,7 @@ func registerHandler(c *gin.Context) {
 		c.AbortWithError(http.StatusBadRequest, fmt.Errorf("failed to save user with %v", err))
 	}
 
-	c.String(http.StatusOK, fmt.Sprintf("'%s' uploaded!", user))
+	c.String(http.StatusOK, fmt.Sprintf("'%s' registered", user))
 }
 
 func getUser(c *gin.Context) (*User, error) {
