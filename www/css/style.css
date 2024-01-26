@@ -13,9 +13,20 @@ body {
     margin: 0;
 }
 
+div,
+span,
+p,
+input {
+    font-family: 'Noto Sans Hebrew', sans-serif;
+    font-weight: 400;
+    color: #3c2415;
+}
+
+
 .header {
     position: fixed;
     width: 100%;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     background: #3c2415;
@@ -52,17 +63,18 @@ body {
 }
 
 .content.main {
-    padding: 0 5%;
+    padding: 5%;
+}
+
+.section-title {
+    font-weight: 800;
+
 }
 
 .section-title {
     margin: 0 0 15px 0;
-    font-family: Noto Sans Hebrew;
-    font-family: 'Noto Sans Hebrew', sans-serif;
-    font-style: normal;
-    font-weight: 800;
     text-decoration: none;
-    color: #8dc63f;
+    color: #3c2415;
     font-size: 32px;
     line-height: 72px;
 }
@@ -86,6 +98,16 @@ body {
     line-height: 2;
     text-align: center;
 }
+
+@media (max-width: 600px){
+    .header {
+        display: none;
+    }
+    .how-image-container {
+        flex-direction: column;
+    }
+}
+
 
 .how-image-container {
     display: flex;
@@ -113,7 +135,7 @@ body {
 
 .the-team-container {
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
 }
 
 .team-card-container .team-card-image-content img {
@@ -146,8 +168,6 @@ body {
 .team-card-label-name {
     color: #0E1133;
     font-weight: 700;
-    font-family: Lato, sans-serif;
-    font-style: normal;
     font-size: 20px;
     letter-spacing: 0.5px;
     line-height: 28px;
@@ -159,6 +179,11 @@ body {
     text-align: center;
     margin: 100px 0;
 }
+
+.contact-us .section-title {
+    font-family: 'Avenir Next', sans-serif;
+}
+
 .contact-us-container {
     padding: 20px;
     background-color: rgba(141, 198, 63, 51%);
@@ -182,12 +207,12 @@ body {
     margin: 40px 0;
 }
 
-.contact-field-content.required > label::after {
+.contact-field-content.required>label::after {
     content: "*";
     color: rgb(255, 0, 0);
 }
 
-.contact-field-content > label {
+.contact-field-content>label {
     font-family: Lato, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -205,8 +230,6 @@ input[type=submit] {
     max-width: 375px;
     width: 100%;
     border: 2px solid #8dc63f;
-    font-family: Lato, sans-serif;
-    font-style: normal;
     font-weight: 400;
     text-decoration: none;
     background: #8dc63f;
@@ -238,8 +261,9 @@ input[type=submit]:hover {
 }
 
 .iframe-hide {
-    position:absolute; 
-    top:-1px; 
-    left:-1px; width:1px; 
-    height:1px;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 1px;
+    height: 1px;
 }
