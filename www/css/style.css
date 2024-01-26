@@ -103,8 +103,26 @@ input {
         display: none;
     }
 
-    .how-image-container {
+    .how-image-container,
+    .the-team-container,
+    .donations-bank {
         flex-direction: column;
+    }
+
+    .team-card-container {
+        margin-bottom: 70px;
+    }
+
+    .team-card-label-content {
+        max-width: 150px;
+    }
+    
+    .donations-bank .logo-jgive img {
+        width: 150px;
+        margin-top: 50px;
+    }
+    .donations-bank .bank-details p:last-child, .contact > div {
+        font-size: 12px;
     }
 }
 
@@ -143,6 +161,7 @@ input {
     max-height: 350px;
     border-radius: 15px;
 }
+
 
 .team-card-label-content {
     position: absolute;
@@ -266,6 +285,10 @@ input[type=submit]:hover {
 .donation .logo-jgive {
     width: 200px;
     height: 47px;
+}
+
+.bank-details {
+
 }
 
 .contact {
