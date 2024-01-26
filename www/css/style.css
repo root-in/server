@@ -74,16 +74,15 @@ input {
 .section-title {
     margin: 0 0 15px 0;
     text-decoration: none;
-    color: #3c2415;
+    color: #8dc63f;
     font-size: 32px;
     line-height: 72px;
 }
 
 .section-title.sub-title {
-    font-weight: normal;
+    font-weight: bold;
     font-size: 24px;
     line-height: 52px;
-
 }
 
 .section-main {
@@ -253,7 +252,7 @@ input[type=submit]:hover {
     display: none;
 }
 
-#submit-message.show {
+#thank-you-message.show {
     display: block;
 }
 
