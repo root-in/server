@@ -15,13 +15,13 @@ import (
 
 func saveUser(user *User, fileLink string) error {
 	ctx := context.Background()
-	b, err := os.ReadFile("credentials.json")
-	if err != nil {
-		return fmt.Errorf("unable to read client secret file: %v", err)
+	secret, ok := os.LookupEnv("credentials.json")
+	if !ok {
+		return fmt.Errorf("unable to read client secret")
 	}
 
 	// If modifying these scopes, delete your previously saved token.json.
-	config, err := google.ConfigFromJSON(b, "https://www.googleapis.com/auth/spreadsheets.readonly")
+	config, err := google.ConfigFromJSON([]byte(secret), "https://www.googleapis.com/auth/spreadsheets.readonly")
 	if err != nil {
 		return fmt.Errorf("unable to parse client secret file to config: %v", err)
 	}
