@@ -105,7 +105,9 @@ input {
     .header {
         display: none;
     }
-
+    .our-background {
+        max-width: 240px;
+    }
     .how-image-container,
     .the-team-container,
     .donations-bank {
