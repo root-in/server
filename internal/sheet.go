@@ -3,13 +3,17 @@ package internal
 import (
 	"context"
 	"fmt"
+	"net/url"
 	"os"
 
 	"google.golang.org/api/option"
 	"google.golang.org/api/sheets/v4"
 )
 
-func SaveUser(user *User, fileLink string) error {
+const spreadsheetId = "1fTYLgGZG8HJ25HtVg1y7as7EVG7eB347DZM6sVzw5MM"
+const spreadsheetName = "rootin"
+
+func saveUser(user *User, fileName string) error {
 	secret, ok := os.LookupEnv("credentials.json")
 	if !ok {
 		return fmt.Errorf("unable to read client secret")
@@ -21,10 +25,8 @@ func SaveUser(user *User, fileLink string) error {
 		return fmt.Errorf("failed to create service with %v", err)
 	}
 
-	spreadsheetId := "1fTYLgGZG8HJ25HtVg1y7as7EVG7eB347DZM6sVzw5MM"
-
 	row := &sheets.ValueRange{
-		Values: [][]interface{}{{user.Name, user.Surname, user.Email, user.Phone, fileLink}},
+		Values: [][]interface{}{{user.Name, user.Surname, user.Email, user.Phone, getFileLink(fileName)}},
 	}
 
 	response, err := sheetsService.Spreadsheets.Values.Append(spreadsheetId, "Registrants", row).ValueInputOption("USER_ENTERED").InsertDataOption("INSERT_ROWS").Context(ctx).Do()
@@ -33,4 +35,13 @@ func SaveUser(user *User, fileLink string) error {
 	}
 
 	return nil
+}
+
+func getFileLink(fileName string) string {
+	u := url.URL{
+		Scheme: "https",
+		Host:   "storage.cloud.google.com",
+		Path:   fmt.Sprintf("/%s-web/%s", spreadsheetName, fileName),
+	}
+	return u.String()
 }
