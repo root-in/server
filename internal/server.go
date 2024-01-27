@@ -42,7 +42,7 @@ func registerHandler(c *gin.Context) {
 		return
 	}
 
-	if err := saveUser(user, link); err != nil {
+	if err := SaveUser(user, link); err != nil {
 		c.AbortWithError(http.StatusBadRequest, fmt.Errorf("failed to save user with %v", err))
 		return
 	}
