@@ -105,9 +105,9 @@ input {
     .header {
         display: none;
     }
-    /* .our-background img {
-        max-width: 240px;
-    } */
+    .our-background img {
+        max-width: 320px;
+    }
     .how-image-container,
     .the-team-container,
     .donations-bank {
