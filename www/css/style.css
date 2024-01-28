@@ -9,6 +9,7 @@ body {
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
+    background-attachment:fixed;
     text-align: right;
     margin: 0;
 }
