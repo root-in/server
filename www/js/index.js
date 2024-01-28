@@ -12,5 +12,7 @@ form.addEventListener('submit', (e) => {
     form.submit()
     loader.style.display = 'none';
     form.reset();
+    submitMessage.classList.remove('show');
+
   }, 2000);
 });
