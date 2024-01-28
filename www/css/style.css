@@ -103,6 +103,9 @@ input {
     .menu {
         display: none;
     }
+    .content.content.main {
+        margin-top: 40px;;
+    }
     .our-background img {
         max-width: 350px;
     }
