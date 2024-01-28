@@ -279,7 +279,7 @@ input[type=submit]:hover {
 }
 
 .show {
-    display: block;
+    display: block !important;
 }
 
 #thank-you-message.show {
