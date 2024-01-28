@@ -71,7 +71,7 @@ input {
 }
 
 .section-title {
-    margin: 15px 0 15px 0;
+    margin: 30px 0 15px 0;
     text-decoration: none;
     color: #8dc63f;
     font-size: 32px;
@@ -148,7 +148,7 @@ input {
 }
 
 .the-team {
-    margin-top: 15px;
+    margin-top: 30px;
     width: 100%;
     text-align: center;
 }
