@@ -52,7 +52,6 @@ input {
     margin: 0 20px;
 }
 
-
 .content,
 .about-us,
 .how-it-works {
@@ -87,8 +86,7 @@ input {
 .section-main {
     img {
         height: auto;
-        max-width: 100%;
-        width: 1620px;
+        max-width: 80%;
     }
 }
 
@@ -101,7 +99,7 @@ input {
     body {
         background-image: none;
     }
-    .header {
+    .menu {
         display: none;
     }
     .our-background img {
