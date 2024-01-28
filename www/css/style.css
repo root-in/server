@@ -36,6 +36,7 @@ input {
     z-index: 1000;
     display: flex;
     justify-content: center;
+    align-items: center;
     background: #3c2415;
 }
 
@@ -157,7 +158,7 @@ input {
 }
 
 .the-team {
-    margin-top: 30px;
+    margin-bottom: 50px;
     width: 100%;
     text-align: center;
 }
@@ -169,6 +170,7 @@ input {
 .the-team-container {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 40px;
 }
 
 .team-card-container .team-card-image-content img {
@@ -211,7 +213,7 @@ input {
 .contact-us {
     width: 100%;
     text-align: center;
-    margin: 100px 0;
+    margin: 50px 0;
 }
 
 .contact-us .section-title {
@@ -346,6 +348,7 @@ input[type=submit]:hover {
     background-color: #3c2415;
     height: 50px;
     width: 50px;
+    top: 13px;
     right: 0;
     z-index: 9000;
     position: fixed;
