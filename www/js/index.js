@@ -38,3 +38,7 @@ document.addEventListener('click', (event) => {
 checkbox.addEventListener('change', () => {
   menuItems.classList.toggle('open', checkbox.checked);
 });
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
