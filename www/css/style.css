@@ -43,6 +43,7 @@ input {
 .separator {
     border-bottom: 2px solid;
     margin-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 .menu {
